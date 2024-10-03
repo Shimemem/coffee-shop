@@ -3,6 +3,7 @@ const cors = require('cors');
 const app = express();
 const PORT = 5000;
 
+// Middleware
 app.use(cors());
 app.use(express.json()); // To handle JSON data
 
@@ -11,6 +12,7 @@ app.get('/', (req, res) => {
   res.send('Backend server is running!');
 });
 
+// Start the Server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

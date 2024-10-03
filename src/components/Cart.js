@@ -20,8 +20,7 @@ const Cart = ({ cartItems, setCartItems }) => {
         <ul>
           {cartItems.map(item => (
             <li key={item.product.id}>
-              {item.product.name} - {item.quantity} x ${item.product.price}
-              <button onClick={() => removeFromCart(item.product.id)}>Remove</button>
+              {item.product.name} - {item.quantity} x ${item.product.price} <button onClick={() => removeFromCart(item.product.id)}>Remove</button>
             </li>
           ))}
         </ul>
