@@ -5,15 +5,17 @@ const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/cart')  // Connect to backend API
+    // Fetch the cart items initially when the page loads
+    fetch('http://localhost:5000/cart')
       .then(response => response.json())
       .then(data => setCartItems(data))
       .catch(error => console.error('Error fetching cart:', error));
-  }, []);
+    }, 
+  []);
 
   return (
     <div>
-      <Cart cartItems={cartItems} />
+      <Cart cartItems={cartItems} setCartItems={setCartItems} />
     </div>
   );
 };
